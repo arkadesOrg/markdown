@@ -21,18 +21,18 @@ License: BSD (see LICENSE.md for details).
 
 import sys
 
-def set_parser(parser):
+def set_xml_lib(lib):
   """ Set parser to alternative like e.g. lxml.etree
   usage:
 
   import markdown
   import lxml.etree
-  markdown.etree.set_parser(lxml.etree)
+  markdown.etree.set_xml_lib(lxml.etree)
   """
-  setattr(sys.modules[__name__], 'etree', parser)
+  setattr(sys.modules[__name__], 'etree', lib)
   
 
-def reset_parser(parser):
+def reset_xml_lib():
   """ Reset the ElementTree parser back to default """
 
   import xml.etree.ElementTree as etree
